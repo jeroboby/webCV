@@ -1,3 +1,10 @@
+!!! POUR FAIRE TOURNER LE PROJET !!
+
+Lancer les 2 commandes dans le terminal :
+
+npm install --save-dev @angular-devkit/build-angular
+npm install bootstrap@3.3.7 --save
+
 # WebCVProject
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.3.

@@ -2,7 +2,7 @@
 
 Lancer les 2 commandes dans le terminal :
 
-npm install --save-dev @angular-devkit/build-angular
+npm install --save-dev @angular-devkit/build-angular 
 npm install bootstrap@3.3.7 --save
 
 # WebCVProject

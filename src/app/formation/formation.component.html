@@ -1,3 +1,21 @@
-<p>
-  formation works!
-</p>
+<div class="row">
+  <div class="col-xs-12">
+    <h2>Vos formations</h2>
+    <div class="list-group">
+      <button class="list-group-item" *ngFor="let formation of formations">
+      <h3 class="list-group-item-heading">
+        {{ formation.school }}
+        <button class="btn btn-default pull-right" (click)="onDeleteFormation(formation)">
+          <span class="glyphicon glyphicon-minus"></span>
+        </button>
+      </h3>
+      <p class="list-group-item-text"> Cette formation s'est déroulée de : {{ formation.fromYear }} à {{ formation.toYear }}</p>  
+      <p class="list-group-item-text"> Elle a couvert le (les) domaine(s) d'étude(s) suivant(s) :{{ formation.fieldStudies }}</p>
+      <p class="list-group-item-text"> Elle a débouché sur : {{ formation.diplom }}</p>
+      <p class="list-group-item-text"> Description du contenu de la formation : {{ formation.description }}</p>
+      <p class="list-group-item-text"> {{ formation.activity }}</p>
+    </button>
+    </div>
+    <button class="btn btn-primary" (click)="onNewFormation()">Nouvelle formation</button>
+  </div>
+</div>

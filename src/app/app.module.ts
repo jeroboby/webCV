@@ -11,7 +11,7 @@ import { HeaderComponent } from './header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { Routes, RouterModule } from "@angular/router";
-import { webCVService } from './services/webCV.service';
+import { FormationService } from './services/formation.service';
 import { FourOfHourComponent } from './four-of-hour/four-of-hour.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
@@ -57,7 +57,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
 
   ],
-  providers: [webCVService],
+  providers: [FormationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

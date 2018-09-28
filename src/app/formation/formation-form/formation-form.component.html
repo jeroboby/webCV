@@ -1,3 +1,47 @@
-<p>
-  formation-form works!
-</p>
+<div class="row">
+  <div class="col-xs-8 col-sm-offset-2">
+    <h2>Enregistrer une nouvelle formation</h2>
+    <form [formGroup]="formationForm" (ngSubmit)="onSaveFormation()">
+      <div class="form-group">
+        <label for="school">Ecole</label>
+        <input type="text" class="form-control" id="school" formControlName="school">
+      </div>  
+      <div class ="form-group">
+          <span class="input-group-addon">De</span>
+          <input type="text" class="form-control" id="fromYear" formControlName="fromYear">
+        </div> 
+      <div class="form-group">
+          <span class="input-group-addon">A</span>
+        <input type="text" class="form-control" id="toYear" formControlName="toYear">
+        </div>  
+      <div class="form-group">
+          <label for="diplom">Diplome</label>
+          <input type="text" class="form-control" id="diplom" formControlName="diplom">
+      </div>
+      <div class="form-group">
+          <label for="fieldStudies">Domaine d'étude</label>
+          <select id="fieldStudies" class="form-control"formControlName="fieldStudies">
+            <option>Agronomie</option>
+            <option>Biologie</option>
+            <option>Chimie</option>
+            <option>Economie</option>
+            <option>Mathématique</option>
+            <option>Physique</option>
+            <option>Ressource humaine</option>
+            <option>Restauration</option>
+          </select>
+      </div>
+      <div class="form-group">
+          <label for="description">Description</label>
+          <input type="text" class="form-control" id="description" formControlName="description">
+      </div>
+      <div class="form-group">
+          <label for="activity">Activitées liées</label>
+          <input type="text" class="form-control" id="activity" formControlName="activity">
+      </div>
+      <button class="btn btn-success" 
+              [disabled]="formationForm.invalid" 
+              type="submit">Enregistrer</button>
+    </form>
+  </div>
+</div>

@@ -19,6 +19,7 @@ export class SignupComponent implements OnInit {
 
   ngOnInit() {
     this.initForm();
+
   }
 
   initForm() {
@@ -40,4 +41,5 @@ export class SignupComponent implements OnInit {
       }
     );
   }
+
 }

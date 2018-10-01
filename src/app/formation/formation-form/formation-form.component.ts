@@ -12,6 +12,7 @@ import { Formation } from '../../models/formation.model';
 export class FormationFormComponent implements OnInit {
 
   formationForm: FormGroup;
+  errorMessage: string;
 
   constructor(private formBuilder: FormBuilder, 
               private formationsService : FormationService,
@@ -23,8 +24,8 @@ export class FormationFormComponent implements OnInit {
 
   initForm() {
     this.formationForm = this.formBuilder.group({
-      fromYear: ['', Validators.required],
-      toYear: ['', Validators.required],
+      fromYear: ['', [Validators.required, Validators.pattern(/(19|20)[0-9][0-9]/)]],
+      toYear: ['', [Validators.required, Validators.pattern(/(19|20)[0-9][0-9]/)]],
       school: ['', Validators.required],
       diplom: ['', Validators.required],
       fieldStudies: ['', Validators.required],
@@ -45,7 +46,7 @@ export class FormationFormComponent implements OnInit {
     this.formationsService.createNewFormation(newFormation);
     this.router.navigate(['/formation'])
     
-    
   }
+
 
 }

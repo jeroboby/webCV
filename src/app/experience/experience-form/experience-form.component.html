@@ -1,3 +1,69 @@
-<p>
-  experience-form works!
-</p>
+<div class="row">
+  <div class="col-xs-8 col-sm-offset-2">
+    <h2>Enregistrer une nouvelle experience</h2>
+    <form class="form-group" [formGroup]="experienceForm" (ngSubmit)="onSaveExperience()">
+      <div class="form-group">
+        <label for="jobTitle">Nom du poste</label>
+        <input type="text" class="form-control" id="jobTitle" formControlName="jobTitle" placeholder="Ex: Ingénieur de recherche">
+      </div>
+      <div class="form-group">
+        <label for="company">Entreprise</label>
+        <input type="text" class="form-control" id="company" formControlName="company" placeholder="Ex: Sopra Steria">
+      </div>
+      <div class="form-group">
+        <label for="place">Lieu</label>
+        <input type="text" class="form-control" id="place" formControlName="place" placeholder="Ex: Paris">
+      </div>
+      <div class="form-group">
+        <label for="fromMonth">A partir du mois de</label>
+        <select id="fromMonth" class="form-control"formControlName="fromMonth">
+          <option>Janvier</option>
+          <option>Fevrier</option>
+          <option>Mars</option>
+          <option>Avril</option>
+          <option>Mai</option>
+          <option>Juin</option>
+          <option>Juillet</option>
+          <option>Aout</option>
+          <option>Septembre</option>
+          <option>Octobre</option>
+          <option>Novembre</option>
+          <option>Decembre</option>
+        </select>
+      </div>
+      <div class="form-group">
+          <label for="fromYear">Annee</label>
+          <input type="text" class="form-control" id="fromYear" formControlName="fromYear" placeholder="Ex: 2017">
+      </div>
+      <div class="form-group">
+        <label for="toMonth">Au mois de</label>
+        <select id="toMonth" class="form-control"formControlName="toMonth">
+          <option>Janvier</option>
+          <option>Fevrier</option>
+          <option>Mars</option>
+          <option>Avril</option>
+          <option>Mai</option>
+          <option>Juin</option>
+          <option>Juillet</option>
+          <option>Aout</option>
+          <option>Septembre</option>
+          <option>Octobre</option>
+          <option>Novembre</option>
+          <option>Decembre</option>
+        </select>
+      </div>
+      <div class="form-group">
+          <label for="toYear">Annee</label>
+          <input type="text" class="form-control" id="toYear" formControlName="toYear" placeholder="Ex: 2018">
+      </div>
+      <div class="form-group">
+          <label for="description">Description</label>
+          <textarea class="form-control" id="description" formControlName="description" placeholder="Description succinte de l'experience" style="height: 15em"></textarea>
+      </div>
+      <button class="btn btn-success" 
+              [disabled]="experienceForm.invalid" 
+              type="submit">Enregistrer</button>
+    </form>
+    <p class="text-danger">{{ errorMessage }}</p>
+  </div>
+</div>

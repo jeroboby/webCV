@@ -20,6 +20,7 @@ import { CompetenceFormComponent } from './competence/competence-form/competence
 import { ExperienceFormComponent } from './experience/experience-form/experience-form.component';
 import { ViePersonnelleFormComponent } from './vie-personnelle/vie-personnelle-form/vie-personnelle-form.component';
 import { AuthGuardService } from './services/auth-guard.service';
+import { ExperienceService } from './services/experience.service';
 
 const appRoutes: Routes = [
   { path: 'auth/signup', component: SignupComponent},
@@ -57,7 +58,9 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
 
   ],
-  providers: [FormationService],
+  providers: [FormationService,
+              ExperienceService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

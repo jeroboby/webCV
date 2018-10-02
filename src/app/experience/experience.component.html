@@ -1,3 +1,21 @@
-<p>
-  experience works!
-</p>
+<div class="row">
+  <div class="col-xs-12">
+    <h2>Vos experiences</h2>
+    <div class="list-group">
+      <div class="list-group-item" *ngFor="let experience of experiences">
+      <h3 class="list-group-item-heading">
+        {{ experience.jobTitle }}
+        <button class="btn btn-default pull-right" (click)="onDeleteExperience(experience)">
+          <span class="glyphicon glyphicon-minus"></span>
+        </button>
+      </h3>
+      <dl>
+      <p class="list-group-item-text"> Cette experience a eu lieu du mois de {{ experience.fromMonth }} {{ experience.fromYear }} au mois de {{ experience.toMonth }} {{ experience.toYear }}</p>  
+      <p class="list-group-item-text"> Elle s'est déroulé au sein de {{ experience.company }} à {{ experience.place }}</p>
+      <p class="list-group-item-text"> Description de l'experience : {{ experience.description }}</p>
+      </dl>
+      </div>
+    </div>
+    <button class="btn btn-primary" (click)="onNewExperience()">Nouvelle experience</button>
+  </div>
+</div>

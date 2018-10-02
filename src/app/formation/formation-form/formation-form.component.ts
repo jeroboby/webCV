@@ -42,7 +42,8 @@ export class FormationFormComponent implements OnInit {
     const fieldStudies = this.formationForm.get('fieldStudies').value;
     const description = this.formationForm.get('description').value;
     const activity = this.formationForm.get('activity').value;
-    const newFormation = new Formation(fromYear, toYear, school, diplom, fieldStudies, description, activity);
+    const newFormation = new Formation(fromYear, toYear, school, diplom, fieldStudies, description);
+    newFormation.activity = activity;
     this.formationsService.createNewFormation(newFormation);
     this.router.navigate(['/formation'])
     
